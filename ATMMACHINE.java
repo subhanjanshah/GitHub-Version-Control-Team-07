@@ -57,6 +57,24 @@ class ATMMACHINE {
     }
 
     // balance check - maheesha
+    // balance check
+    public void showAccountHolder() {
+        System.out.println("Your current balance is: " + balance + " euros");
+    }
+
+    // inner class (not used here but kept same)
+    class accountHolder {
+        private String name;
+        private String accountNumber;
+        int currentBalance;
+
+        public accountHolder(String name, String accountNumber) {
+            this.name = name;
+            this.accountNumber = accountNumber;
+            currentBalance = 0;
+        }
+    }
+
     
 
     // withdraw money - aurelija
