@@ -5,14 +5,14 @@ class ATMMACHINE {
     private int pin = 3289;
     int balance = 500;
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) 
+    {
         ATMMACHINE atm = new ATMMACHINE();
         atm.run();
     }
 
-    public void run() {
-
+    public void run() 
+    {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your card.");
 
@@ -20,7 +20,8 @@ class ATMMACHINE {
         int enteredPin = scanner.nextInt();
         scanner.nextLine();
 
-        if (enteredPin != pin) {
+        if (enteredPin != pin) 
+        {
             System.out.println("INCORRECT PIN!");
             return;
         }
@@ -48,7 +49,7 @@ class ATMMACHINE {
         } 
         else if (action.equalsIgnoreCase("4") || action.equalsIgnoreCase("Change Pin")) 
         {
-           // subhanjan
+            changePin();
         } 
         else 
         {
@@ -57,18 +58,20 @@ class ATMMACHINE {
     }
 
     // balance check - maheesha
-    // balance check
-    public void showAccountHolder() {
+    public void showAccountHolder() 
+    {
         System.out.println("Your current balance is: " + balance + " euros");
     }
 
     // inner class (not used here but kept same)
-    class accountHolder {
+    class accountHolder 
+    {
         private String name;
         private String accountNumber;
         int currentBalance;
 
-        public accountHolder(String name, String accountNumber) {
+        public accountHolder(String name, String accountNumber) 
+        {
             this.name = name;
             this.accountNumber = accountNumber;
             currentBalance = 0;
@@ -90,18 +93,22 @@ class ATMMACHINE {
         System.out.print("Enter deposit amount: ");
         int amount = sc.nextInt();
 
-        if (amount <= 0) {
+        if (amount <= 0) 
+        {
             System.out.println("Invalid amount.");
-        } else if (amount > 2000) {
+        } 
+        else if (amount > 2000) 
+        {
             System.out.println("Deposit limit exceeded.");
-        } else {
+        } 
+        else 
+        {
             balance += amount; 
             System.out.println("Deposit successful!");
             System.out.println("Deposited: " + amount + " euros");
             System.out.println("New balance: " + balance + " euros");
         }
     }
-    
 
     // Change pin part - Subhanjan
     public void changePin() 
