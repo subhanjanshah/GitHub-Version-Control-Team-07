@@ -40,11 +40,11 @@ class ATMMACHINE {
         } 
         else if (action.equalsIgnoreCase("2") || action.equalsIgnoreCase("Cash Deposit")) 
         {
-            // ruhan
+            deposit();
         } 
         else if (action.equalsIgnoreCase("3") || action.equalsIgnoreCase("Balance Check")) 
         {
-            // maheesha
+            showAccountHolder();
         } 
         else if (action.equalsIgnoreCase("4") || action.equalsIgnoreCase("Change Pin")) 
         {
@@ -81,6 +81,26 @@ class ATMMACHINE {
     
 
     // deposit money - ruhan
+    public void deposit() 
+    {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("You can only deposit up to 2000 at a time.");
+
+        System.out.print("Enter deposit amount: ");
+        int amount = sc.nextInt();
+
+        if (amount <= 0) {
+            System.out.println("Invalid amount.");
+        } else if (amount > 2000) {
+            System.out.println("Deposit limit exceeded.");
+        } else {
+            balance += amount; 
+            System.out.println("Deposit successful!");
+            System.out.println("Deposited: " + amount + " euros");
+            System.out.println("New balance: " + balance + " euros");
+        }
+    }
     
 
     // change pin - shah
