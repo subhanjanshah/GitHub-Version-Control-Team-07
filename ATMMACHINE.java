@@ -104,15 +104,18 @@ class ATMMACHINE {
     
 
     // Change pin part - Subhanjan
-    public void changePin() {
-
+    public void changePin() 
+    {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter new PIN: ");
         int newPin = sc.nextInt();
 
-        if (newPin == pin) {
+        if (newPin == pin) 
+        {
             System.out.println("New PIN must be different from old PIN.");
-        } else {
+        } 
+        else 
+        {
             pin = newPin;
             System.out.println("PIN changed successfully!");
         }
