@@ -79,22 +79,31 @@ class ATMMACHINE {
     }
 
     // withdraw money - aurelija
-
-    public void Withdraw() {
+    public void Withdraw() 
+    {
         int sum;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter how much money would you like to withdraw:");
         sum = scanner.nextInt();
 
-        if (sum > balance) {
+        if (sum > balance) 
+        {
             System.out.println("Error: entered amount exceeds your balance");
-        } else if (sum > 400) {
+        } 
+        else if (sum > 400) 
+        {
             System.out.println("Error: entered amount exceeds the maximum limit (400€)");
-        } else if (sum < 5) {
+        } 
+        else if (sum < 5) 
+        {
             System.out.println("Error: entered amount is too small");
-        } else if (sum % 5 != 0) {
+        } 
+        else if (sum % 5 != 0) 
+        {
             System.out.println("Error: entered amount has to be divisible by five");
-        } else {
+        } 
+        else 
+        {
             balance -= sum; // 👈 updates balance
             System.out.println("Cash is Coming...");
             System.out.println("Withdrawn: " + sum + " euros");
@@ -105,9 +114,8 @@ class ATMMACHINE {
     // deposit money - ruhan
     public void deposit() 
     {
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("You can only deposit up to 2000 at a time.");
+        System.out.println("You can only deposit up to 1600 EUROS at a time.");
 
         System.out.print("Enter deposit amount: ");
         int amount = sc.nextInt();
@@ -116,7 +124,7 @@ class ATMMACHINE {
         {
             System.out.println("Invalid amount.");
         } 
-        else if (amount > 2000) 
+        else if (amount > 1600) 
         {
             System.out.println("Deposit limit exceeded.");
         } 
