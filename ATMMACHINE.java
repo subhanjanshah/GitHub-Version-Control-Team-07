@@ -37,7 +37,7 @@ class ATMMACHINE {
         String action = scanner.nextLine();
         if (action.equalsIgnoreCase("1") || action.equalsIgnoreCase("Cash Withdraw")) 
         {
-            // aruleja
+            Withdraw();
         } 
         else if (action.equalsIgnoreCase("2") || action.equalsIgnoreCase("Cash Deposit")) 
         {
@@ -78,10 +78,29 @@ class ATMMACHINE {
         }
     }
 
-    
-
     // withdraw money - aurelija
-    
+
+    public void Withdraw() {
+        int sum;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter how much money would you like to withdraw:");
+        sum = scanner.nextInt();
+
+        if (sum > balance) {
+            System.out.println("Error: entered amount exceeds your balance");
+        } else if (sum > 400) {
+            System.out.println("Error: entered amount exceeds the maximum limit (400€)");
+        } else if (sum < 5) {
+            System.out.println("Error: entered amount is too small");
+        } else if (sum % 5 != 0) {
+            System.out.println("Error: entered amount has to be divisible by five");
+        } else {
+            balance -= sum; // 👈 updates balance
+            System.out.println("Cash is Coming...");
+            System.out.println("Withdrawn: " + sum + " euros");
+            System.out.println("Remaining balance: " + balance + " euros");
+        }
+    }
 
     // deposit money - ruhan
     public void deposit() 
